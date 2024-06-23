@@ -1,39 +1,42 @@
-//This ia class representing the details of a person.
-
-
-class Person{
-    #AadharNumber;
-    #PhoneNumber;
+//a “person” class to hold all the details
+class person{
     
-    constructor ( personName,personFatherName,personMotherName,personGender,personDateOfBirth,personEmailID,personHighestQualification,personMaritalStatus,personWorkingExperience,personAddress)
-    {
-        this.Name = personName;
-        this.FatherName=personFatherName;
-        this.MotherName=personMotherName;
-        this.Gender=personGender;
-        this.DateOfBirth=personDateOfBirth;
-        this.EmailID=personEmailID;
-        this.HighestQualification=personHighestQualification;
-        this.MaritalStatus=personMaritalStatus;
-        this.WorkingExperience=personWorkingExperience;
-        this.Address=personAddress;
-        this.#AadharNumber=Math.floor(Math.random()*1000000000000);
-        this.#PhoneNumber=Math.floor(Math.random()*10000000000);
-        
+    constructor(name,age,fatherName,motherName,siblings,maritalStatus,qualification,job,email,hobbies,phoneNumber,address,city,country,nationality){
+       this.Name=name;
+       this.Age=age;
+       this.FatherName=fatherName;
+       this.MotherName=motherName;
+       this.Siblings=siblings;
+       this.MaritalStatus=maritalStatus;
+       this.Qualification=qualification;
+       this.Job=job;
+       this.Email=email;
+       this.Hobbies=hobbies;
+       this.PhoneNumber=phoneNumber;
+       this.Address=address;
+       this.City=city;
+       this.Country=country;
+       this.Nationality=nationality;
     }
-    get AadharNumber() {
-        console.log('Authorized request for getting Aadhar number');
-        return this.#AadharNumber;
-    }
-
-    get PhoneNumber() {
-        console.log('Authorized request for getting Phone number');
-        return this.#PhoneNumber;
-    }
+    
 }
-const person1=new Person('Musthaffa','Muththumeeran Pillai','Beema Beevi','Male','25/11/1999','musthaffa@gmail.com','M.Sc','Unmarried','Fresher','North Street,Nagarcoil,Kanyakumari.') ;
-
-
+const person1=new person('Bingo',
+    23,
+    'Walter',
+    'Selena',
+    ['Justin','Delin'],
+    'Unmarried',
+    'B.Sc',
+    'Salesman',
+    'bingo123@gmail.com',
+    ['Reading','Singing','Dancing','Watching Cricket'],
+    6734567223,
+    {DoorNumber:'3-456',
+        Street:'R C Street',
+        LandMark:'Near SVR hotel',
+        Town:'George Town'},
+    'Chennai',
+    'India',
+    'Anglo-Indian');
 console.log(person1);
-console.log(person1.PhoneNumber);
-console.log(person1.AadharNumber);
+

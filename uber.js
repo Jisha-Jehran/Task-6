@@ -1,20 +1,19 @@
+//Uber Price calculation
 class UberPrice{
-    constructor(kilometer,price=100){
-        this.kilometer = kilometer,
-        this.price = price      
-     }
-        get PriceValue() 
-        {
-            return this.kilometer * this.price ;
-        }
-        
+    constructor(distance,price=60){  //setting Rs.60 as default uberCar charge per km
+        this.distance=distance;
+        this.price=price;
     }
-    const UberCar1 = new UberPrice(5);
-    const UberCar2 = new UberPrice(5, 200);
-    
-    console.log(UberCar1.PriceValue);
-    console.log(UberCar2.PriceValue);
-//const Uber1=new UberPrice(10);
-//const Uber2=new UberPrice(10,70);
-//console.log(Uber1);
-//console.log(Uber2);
+    getUberPrice(){
+        return this.distance*this.price
+    }
+}
+//creating a instance for a man who travelled 5 kilometer in UberCar 
+
+const customer1=new UberPrice(5);
+console.log(customer1.getUberPrice());
+
+//creating a instance for another man who travelled 5 kilometer in UberCar and the driver charges Rs.50 per km.
+
+const customer2=new UberPrice(5,50);
+console.log(customer2.getUberPrice());

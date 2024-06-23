@@ -1,54 +1,50 @@
 class Circle{
-    constructor(Radius="1.0",Color="Red")
-    {
-        this.Radius=Radius,
-        this.Color=Color
+    constructor(double=1.0,String='red'){
+        this.double=double;
+        this.String=String
     }
-//4 
-    get RadiusValue(){
-        return this.Radius;
+    getRadius(){
+        return this.double;
     }
-//5
-    set RadiusValue(Radius){
-        return this.Radius=Radius;
+    setRadius(radius){
+        return this.double=radius;
     }
-
-//6
-    get ColorData(){
-        return this.Color;
+    getColor(){
+        return this.String;
     }
-//7
-    set ColorData(Color){
-        return this.Color=Color;
+    setColor(color){
+        return this.String=color;
     }
-//8
-    get toString(){
-        return `"Circle[Radius=${this.Radius},Color=${this.Color}]"`
+    toString(){
+        return `Circle[radius=${this.double},color=${this.String}]`;
     }
-//9
-    get area(){
-        return Math.PI*this.Radius*this.Radius ;
+    getArea(){
+        return Math.PI*this.double**2
     }
-//10
-    get circumference(){
-        return 2*Math.PI*this.Radius ;
+    getCircumference(){
+        return 2*Math.PI*this.double
     }
 }
 //1
-const Circle1=new Circle();
-console.log(Circle1);
-console.log(Circle1.Radius);
+const firstCircle=new Circle();
+console.log(firstCircle);
 //2
-const Circle2=new Circle("2.7");
-console.log(Circle2.Radius);
-console.log(Circle2.Color);
-console.log(Circle2);
+const secondCircle=new Circle(2.0);
+console.log(secondCircle);
 //3
-const Circle3=new Circle("3","Black");
-console.log(Circle3.Radius);
-console.log(Circle3.Color);
-console.log(Circle3);
-
-console.log(Circle3.toString);
-console.log(Circle3.area.toFixed(2));
-console.log(Circle3.circumference.toFixed(2))
+const thirdCircle=new Circle(3.0,'green');
+console.log(thirdCircle);
+//4
+console.log(firstCircle.getRadius());
+//5
+console.log(firstCircle.setRadius(2.0));
+//6
+console.log(firstCircle.getColor());
+//7
+console.log(firstCircle.setColor());
+//8
+console.log(firstCircle.toString());
+//9
+console.log(firstCircle.getArea().toFixed(2));
+//10
+console.log(firstCircle.getCircumference().toFixed(2));
